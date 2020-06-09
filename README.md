@@ -1,2 +1,4 @@
-# CSharpEnumExtensions
-A set of c# enum extensions designed for performance and usability.
+# CSharpExtensions
+A set of c# extensions designed for performance and usability.
+Currently the project contains:
+## EnumExtensions
