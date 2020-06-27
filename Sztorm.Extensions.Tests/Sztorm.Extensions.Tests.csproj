@@ -7,13 +7,135 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="nunit" Version="3.11.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.11.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+    <None Include="EnumExtensions.BitFlags16.generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnumExtensions.BitFlags16.tt</DependentUpon>
+    </None>
+    <None Include="EnumExtensions.BitFlags64.generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnumExtensions.BitFlags64.tt</DependentUpon>
+    </None>
+    <None Include="EnumExtensions.BitFlags8.generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnumExtensions.BitFlags8.tt</DependentUpon>
+    </None>
+    <None Include="EnumExtensions.UnsignedBitFlags32.generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnumExtensions.UnsignedBitFlags32.tt</DependentUpon>
+    </None>
+    <None Include="UnsignedBitFlags64.generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>UnsignedBitFlags64.tt</DependentUpon>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nunit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.16.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Sztorm.Extensions\Sztorm.Extensions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="EnumExtensions - Copy.UnsignedBitFlags8.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumExtensions - Copy.UnsignedBitFlags8.generated.cs</LastGenOutput>
+    </None>
+    <None Update="EnumExtensions.BitFlags16.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumExtensions.BitFlags16.generated.cs</LastGenOutput>
+    </None>
+    <None Update="EnumExtensions.BitFlags32.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumExtensions.BitFlags32.generated.cs</LastGenOutput>
+    </None>
+    <None Update="EnumExtensions.BitFlags64.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumExtensions.BitFlags64.generated.cs</LastGenOutput>
+    </None>
+    <None Update="EnumExtensions.BitFlags8.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumExtensions.BitFlags8.generated.cs</LastGenOutput>
+    </None>
+    <None Update="EnumExtensions.UnsignedBitFlags16.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumExtensions.UnsignedBitFlags16.generated.cs</LastGenOutput>
+    </None>
+    <None Update="EnumExtensions.UnsignedBitFlags32.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumExtensions.UnsignedBitFlags32.generated.cs</LastGenOutput>
+    </None>
+    <None Update="EnumExtensions.UnsignedBitFlags64.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumExtensions.UnsignedBitFlags64.generated.cs</LastGenOutput>
+    </None>
+    <None Update="EnumExtensions.UnsignedBitFlags8.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumExtensions.UnsignedBitFlags8.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="EnumExtensions - Copy.UnsignedBitFlags8.generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnumExtensions - Copy.UnsignedBitFlags8.tt</DependentUpon>
+    </Compile>
+    <Compile Update="EnumExtensions.BitFlags16.generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnumExtensions.BitFlags16.tt</DependentUpon>
+    </Compile>
+    <Compile Update="EnumExtensions.BitFlags32.generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnumExtensions.BitFlags32.tt</DependentUpon>
+    </Compile>
+    <Compile Update="EnumExtensions.BitFlags64.generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnumExtensions.BitFlags64.tt</DependentUpon>
+    </Compile>
+    <Compile Update="EnumExtensions.BitFlags8.generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnumExtensions.BitFlags8.tt</DependentUpon>
+    </Compile>
+    <Compile Update="EnumExtensions.UnsignedBitFlags16.generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnumExtensions.UnsignedBitFlags16.tt</DependentUpon>
+    </Compile>
+    <Compile Update="EnumExtensions.UnsignedBitFlags32.generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnumExtensions.UnsignedBitFlags32.tt</DependentUpon>
+    </Compile>
+    <Compile Update="EnumExtensions.UnsignedBitFlags64.generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnumExtensions.UnsignedBitFlags64.tt</DependentUpon>
+    </Compile>
+    <Compile Update="EnumExtensions.UnsignedBitFlags8.generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnumExtensions.UnsignedBitFlags8.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

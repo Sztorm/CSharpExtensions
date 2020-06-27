@@ -1,0 +1,48 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ output extension=".generated.cs" #>
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+// File is auto-generated. Do not modify as changes may be overwritten.
+// If you want to modify this file, edit template file with the same name and .tt extension.
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+
+using System;
+using System.Runtime.CompilerServices;
+
+namespace Sztorm.Extensions.Enum
+{
+    public static partial class EnumExtensions
+    {
+<#
+    PushIndent("    ");
+    WriteMethod(sizes[0], types[0]);
+
+    for (int i = 1; i < types.Length; i++)
+    {
+        WriteLine("");
+        WriteMethod(sizes[i], types[i]);
+    }
+    PopIndent();
+#>
+    }
+}
+<#+
+    private Type[] types = { typeof(sbyte),  typeof(Int16), typeof(Int32), typeof(Int64) };
+    private int[] sizes= { 8, 16, 32, 64 };
+
+    private void WriteMethod(int size, Type type)
+    {
+#>
+    private static TEnum Int<#= size #>And<TEnum>(this TEnum source, TEnum flags)
+        where TEnum : unmanaged, System.Enum
+    {
+        ref <#= type.Name #> sourceAsInt<#= size #> = ref Unsafe.As<TEnum, <#= type.Name #>>(ref source);
+        sourceAsInt<#= size #> = (<#= type.Name #>)Int64And(
+            Unsafe.As<TEnum, long>(ref source),
+            Unsafe.As<TEnum, long>(ref flags));
+    
+        return source;
+    }
+<#+      
+    }
+#>
