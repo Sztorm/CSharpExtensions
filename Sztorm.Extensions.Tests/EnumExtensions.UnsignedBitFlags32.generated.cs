@@ -9,7 +9,7 @@ namespace Sztorm.Extensions.Tests
 {
     public static partial class EnumExtensionsTests
     {
-        enum UnsignedBitFlags32 : UInt32
+        public enum UnsignedBitFlags32 : UInt32
         {
             None = 0,
             Bit1 = 1,

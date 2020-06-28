@@ -9,7 +9,7 @@ namespace Sztorm.Extensions.Tests
 {
     public static partial class EnumExtensionsTests
     {
-        enum BitFlags8 : SByte
+        public enum BitFlags8 : SByte
         {
             None = 0,
             Bit1 = 1,
