@@ -13,6 +13,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumExtensions.And.generated.cs</LastGenOutput>
     </None>
+    <None Update="Enum\EnumExtensions.WithFlagsSetTo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumExtensions.WithFlagsSetTo.generated.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +28,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>EnumExtensions.And.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Enum\EnumExtensions.WithFlagsSetTo.generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnumExtensions.WithFlagsSetTo.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 
