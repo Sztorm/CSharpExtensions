@@ -85,6 +85,46 @@ namespace Sztorm.Extensions.Enum
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static long Int64WithFlagsToggled(long source, long flags) => source ^ flags;
+
+        /// <summary>
+        ///     Returns <paramref name="source"/> enum with specified <paramref name="flags"/>
+        ///     toggled.<br/>
+        ///     Supported enum sizes are 1, 2, 4 and 8-byte.
+        ///     <para>
+        ///         Exceptions:<br/>
+        ///         <see cref="ArgumentException"/> Size of underlying enum type is not supported.
+        ///     </para>
+        /// </summary>
+        /// <typeparam name="TEnum"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="flags"></param>
+        /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static TEnum WithFlagsToggled<TEnum>(this TEnum source, TEnum flags)
+            where TEnum : unmanaged, System.Enum
+        {
+            int enumSize = Unsafe.SizeOf<TEnum>();
+
+            switch (enumSize)
+            {
+                case 1:
+                    return source.Int8WithFlagsToggled(flags);
+                case 2:
+                    return source.Int16WithFlagsToggled(flags);
+                case 4:
+                    return source.Int32WithFlagsToggled(flags);
+                case 8:
+                    return source.Int64WithFlagsToggled(flags);
+                default:
+                    throw new ArgumentException("Size of underlying enum type is not supported.");
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static bool Int64HasFlags(long source, long flags) => (source & flags) == flags;
+
         /// <summary>
         ///     Returns value indicating whether the <paramref name="flags"/> are set in the
         ///     current instance.<br/>
@@ -118,8 +158,5 @@ namespace Sztorm.Extensions.Enum
                     throw new ArgumentException("Size of underlying enum type is not supported.");
             }
         }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static bool Int64HasFlags(long source, long flags) => (source & flags) == flags;
     }
 }
