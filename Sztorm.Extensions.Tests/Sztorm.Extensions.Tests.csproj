@@ -27,11 +27,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EnumExtensions.UnsignedBitFlags32.tt</DependentUpon>
     </None>
-    <None Include="UnsignedBitFlags64.generated.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>UnsignedBitFlags64.tt</DependentUpon>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
