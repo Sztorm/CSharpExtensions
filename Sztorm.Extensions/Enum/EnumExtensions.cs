@@ -127,7 +127,8 @@ namespace Sztorm.Extensions.Enum
 
         /// <summary>
         ///     Returns value indicating whether the <paramref name="flags"/> are set in the
-        ///     current instance.<br/>
+        ///     current instance. Always returns <see langword="true"/> for flags whose underlying
+        ///     value is zero.<br/>
         ///     Supported enum sizes are 1, 2, 4 and 8-byte.
         ///     <para>
         ///         Exceptions:<br/>
