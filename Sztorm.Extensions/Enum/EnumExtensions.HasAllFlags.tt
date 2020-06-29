@@ -33,9 +33,9 @@ namespace Sztorm.Extensions.Enum
     private void WriteMethod(int size, Type type)
     {
 #>
-    private static bool Int<#= size #>HasFlags<TEnum>(this TEnum source, TEnum flags)
+    private static bool Int<#= size #>HasAllFlags<TEnum>(this TEnum source, TEnum flags)
         where TEnum : unmanaged, System.Enum
-        => Int64HasFlags(
+        => Int64HasAllFlags(
             Unsafe.As<TEnum, <#= type.Name #>>(ref source), Unsafe.As<TEnum, <#= type.Name #>>(ref flags));
 <#+      
     }

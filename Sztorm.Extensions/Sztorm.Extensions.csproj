@@ -5,11 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Enum\EnumExtensions.HasFlags.generated.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>EnumExtensions.HasFlags.tt</DependentUpon>
-    </None>
     <None Include="Enum\EnumExtensions.WithFlagsToggled.generated.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -26,9 +21,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumExtensions.And.generated.cs</LastGenOutput>
     </None>
-    <None Update="Enum\EnumExtensions.HasFlags.tt">
+    <None Update="Enum\EnumExtensions.HasAllFlags.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumExtensions.HasFlags.generated.cs</LastGenOutput>
+      <LastGenOutput>EnumExtensions.HasAllFlags.generated.cs</LastGenOutput>
     </None>
     <None Update="Enum\EnumExtensions.WithFlagsSetTo.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -50,10 +45,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EnumExtensions.And.tt</DependentUpon>
     </Compile>
-    <Compile Update="Enum\EnumExtensions.HasFlags.generated.cs">
+    <Compile Update="Enum\EnumExtensions.HasAllFlags.generated.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>EnumExtensions.HasFlags.tt</DependentUpon>
+      <DependentUpon>EnumExtensions.HasAllFlags.tt</DependentUpon>
     </Compile>
     <Compile Update="Enum\EnumExtensions.WithFlagsSetTo.generated.cs">
       <DesignTime>True</DesignTime>

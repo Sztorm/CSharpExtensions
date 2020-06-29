@@ -123,10 +123,10 @@ namespace Sztorm.Extensions.Enum
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static bool Int64HasFlags(long source, long flags) => (source & flags) == flags;
+        private static bool Int64HasAllFlags(long source, long flags) => (source & flags) == flags;
 
         /// <summary>
-        ///     Returns value indicating whether the <paramref name="flags"/> are set in the
+        ///     Returns value indicating whether all the <paramref name="flags"/> are set in the
         ///     current instance. Always returns <see langword="true"/> for flags whose underlying
         ///     value is zero.<br/>
         ///     Supported enum sizes are 1, 2, 4 and 8-byte.
@@ -140,7 +140,7 @@ namespace Sztorm.Extensions.Enum
         /// <param name="flags"></param>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool HasFlags<TEnum>(this TEnum source, TEnum flags)
+        public static bool HasAllFlags<TEnum>(this TEnum source, TEnum flags)
             where TEnum : unmanaged, System.Enum
         {
             int enumSize = Unsafe.SizeOf<TEnum>();
@@ -148,13 +148,13 @@ namespace Sztorm.Extensions.Enum
             switch (enumSize)
             {
                 case 1:
-                    return source.Int8HasFlags(flags);
+                    return source.Int8HasAllFlags(flags);
                 case 2:
-                    return source.Int16HasFlags(flags);
+                    return source.Int16HasAllFlags(flags);
                 case 4:
-                    return source.Int32HasFlags(flags);
+                    return source.Int32HasAllFlags(flags);
                 case 8:
-                    return source.Int64HasFlags(flags);
+                    return source.Int64HasAllFlags(flags);
                 default:
                     throw new ArgumentException("Size of underlying enum type is not supported.");
             }

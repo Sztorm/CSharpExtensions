@@ -30,10 +30,10 @@ namespace Sztorm.Extensions.Tests
             where TEnum : unmanaged, System.Enum
             => source.WithFlagsToggled(flags);
 
-        [TestCaseSource(typeof(EnumExtensionsTests), nameof(HasFlagsTestCases))]
-        public static bool TestHasFlag<TEnum>(TEnum source, TEnum flags)
+        [TestCaseSource(typeof(EnumExtensionsTests), nameof(HasAllFlagsTestCases))]
+        public static bool TestHasAllFlags<TEnum>(TEnum source, TEnum flags)
             where TEnum : unmanaged, System.Enum
-            => source.HasFlags(flags);
+            => source.HasAllFlags(flags);
 
         private static IEnumerable<TestCaseData> AddTestCases()
         {
@@ -149,7 +149,7 @@ namespace Sztorm.Extensions.Tests
                 .Returns(UBF64.Bit1 | UBF64.Bit64);
         }
 
-        private static IEnumerable<TestCaseData> HasFlagsTestCases()
+        private static IEnumerable<TestCaseData> HasAllFlagsTestCases()
         {
             yield return new TestCaseData(BF8.Bit3, BF8.Bit3).Returns(true);
             yield return new TestCaseData(BF8.Bit1, BF8.None).Returns(true);
