@@ -159,5 +159,43 @@ namespace Sztorm.Extensions.Enum
                     throw new ArgumentException("Size of underlying enum type is not supported.");
             }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static bool Int64HasAnyFlags(long source, long flags) => (source & flags) != 0L;
+
+        /// <summary>
+        ///     Returns value indicating whether any of the <paramref name="flags"/> is set in the
+        ///     current instance. Always returns <see langword="false"/> for flags whose underlying
+        ///     value is zero.<br/>
+        ///     Supported enum sizes are 1, 2, 4 and 8-byte.
+        ///     <para>
+        ///         Exceptions:<br/>
+        ///         <see cref="ArgumentException"/> Size of underlying enum type is not supported.
+        ///     </para>
+        /// </summary>
+        /// <typeparam name="TEnum"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="flags"></param>
+        /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool HasAnyFlags<TEnum>(this TEnum source, TEnum flags)
+            where TEnum : unmanaged, System.Enum
+        {
+            int enumSize = Unsafe.SizeOf<TEnum>();
+
+            switch (enumSize)
+            {
+                case 1:
+                    return source.Int8HasAnyFlags(flags);
+                case 2:
+                    return source.Int16HasAnyFlags(flags);
+                case 4:
+                    return source.Int32HasAnyFlags(flags);
+                case 8:
+                    return source.Int64HasAnyFlags(flags);
+                default:
+                    throw new ArgumentException("Size of underlying enum type is not supported.");
+            }
+        }
     }
 }
