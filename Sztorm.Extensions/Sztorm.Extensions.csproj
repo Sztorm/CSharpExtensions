@@ -5,6 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Enum\EnumExtensions.HasFlags.generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnumExtensions.HasFlags.tt</DependentUpon>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.7.1" />
   </ItemGroup>
 
@@ -12,6 +20,10 @@
     <None Update="Enum\EnumExtensions.And.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumExtensions.And.generated.cs</LastGenOutput>
+    </None>
+    <None Update="Enum\EnumExtensions.HasFlags.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumExtensions.HasFlags.generated.cs</LastGenOutput>
     </None>
     <None Update="Enum\EnumExtensions.WithFlagsSetTo.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -28,6 +40,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>EnumExtensions.And.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Enum\EnumExtensions.HasFlags.generated.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnumExtensions.HasFlags.tt</DependentUpon>
     </Compile>
     <Compile Update="Enum\EnumExtensions.WithFlagsSetTo.generated.cs">
       <DesignTime>True</DesignTime>

@@ -25,6 +25,11 @@ namespace Sztorm.Extensions.Tests
             where TEnum : unmanaged, System.Enum
             => source.WithFlagsSetTo(flags, value);
 
+        [TestCaseSource(typeof(EnumExtensionsTests), nameof(HasFlagsTestCases))]
+        public static bool TestHasFlag<TEnum>(TEnum source, TEnum flags)
+            where TEnum : unmanaged, System.Enum
+            => source.HasFlags(flags);
+
         private static IEnumerable<TestCaseData> AddTestCases()
         {
             yield return new TestCaseData(BF8.Bit7, BF8.Bit8).Returns(BF8.Bit7 | BF8.Bit8);
@@ -52,41 +57,83 @@ namespace Sztorm.Extensions.Tests
             yield return new TestCaseData(BF8.Bit7 | BF8.Bit5 | BF8.Bit2,
                 BF8.Bit5 | BF8.Bit2, false)
                 .Returns(BF8.Bit7);
+
             yield return new TestCaseData(BF16.Bit7, BF16.Bit16 | BF16.Bit1, true)
                 .Returns(BF16.Bit7 | BF16.Bit16 | BF16.Bit1);
             yield return new TestCaseData(BF16.Bit15 | BF16.Bit5 | BF16.Bit2,
                 BF16.Bit5 | BF16.Bit2, false)
                 .Returns(BF16.Bit15);
+
             yield return new TestCaseData(BF32.Bit7, BF32.Bit32 | BF32.Bit1, true)
                 .Returns(BF32.Bit7 | BF32.Bit32 | BF32.Bit1);
             yield return new TestCaseData(BF32.Bit31 | BF32.Bit5 | BF32.Bit2,
                 BF32.Bit5 | BF32.Bit2, false)
                 .Returns(BF32.Bit31);
+
             yield return new TestCaseData(BF64.Bit7, BF64.Bit64 | BF64.Bit1, true)
                 .Returns(BF64.Bit7 | BF64.Bit64 | BF64.Bit1);
             yield return new TestCaseData(BF64.Bit63 | BF64.Bit5 | BF64.Bit2,
                 BF64.Bit5 | BF64.Bit2, false)
                 .Returns(BF64.Bit63);
+
             yield return new TestCaseData(UBF8.Bit7, UBF8.Bit8 | UBF8.Bit1, true)
                 .Returns(UBF8.Bit7 | UBF8.Bit8 | UBF8.Bit1);
             yield return new TestCaseData(UBF8.Bit7 | UBF8.Bit5 | UBF8.Bit2,
                 UBF8.Bit5 | UBF8.Bit2, false)
                 .Returns(UBF8.Bit7);
+
             yield return new TestCaseData(UBF16.Bit7, UBF16.Bit16 | UBF16.Bit1, true)
                 .Returns(UBF16.Bit7 | UBF16.Bit16 | UBF16.Bit1);
             yield return new TestCaseData(UBF16.Bit15 | UBF16.Bit5 | UBF16.Bit2,
                 UBF16.Bit5 | UBF16.Bit2, false)
                 .Returns(UBF16.Bit15);
+
             yield return new TestCaseData(UBF32.Bit7, UBF32.Bit32 | UBF32.Bit1, true)
                 .Returns(UBF32.Bit7 | UBF32.Bit32 | UBF32.Bit1);
             yield return new TestCaseData(UBF32.Bit31 | UBF32.Bit5 | UBF32.Bit2,
                 UBF32.Bit5 | UBF32.Bit2, false)
                 .Returns(UBF32.Bit31);
+
             yield return new TestCaseData(UBF64.Bit7, UBF64.Bit64 | UBF64.Bit1, true)
                 .Returns(UBF64.Bit7 | UBF64.Bit64 | UBF64.Bit1);
             yield return new TestCaseData(UBF64.Bit63 | UBF64.Bit5 | UBF64.Bit2,
                 UBF64.Bit5 | UBF64.Bit2, false)
                 .Returns(UBF64.Bit63);
+        }
+
+        private static IEnumerable<TestCaseData> HasFlagsTestCases()
+        {
+            yield return new TestCaseData(BF8.Bit3, BF8.Bit3).Returns(true);
+            yield return new TestCaseData(BF8.Bit7 | BF8.Bit8, BF8.Bit7).Returns(true);
+            yield return new TestCaseData(BF8.Bit6 | BF8.Bit8, BF8.Bit7).Returns(false);
+
+            yield return new TestCaseData(BF16.Bit7, BF16.Bit7).Returns(true);
+            yield return new TestCaseData(BF16.Bit15 | BF16.Bit16, BF16.Bit15).Returns(true);
+            yield return new TestCaseData(BF16.Bit14 | BF16.Bit16, BF16.Bit15).Returns(false);
+
+            yield return new TestCaseData(BF32.Bit15, BF32.Bit15).Returns(true);
+            yield return new TestCaseData(BF32.Bit31 | BF32.Bit32, BF32.Bit31).Returns(true);
+            yield return new TestCaseData(BF32.Bit30 | BF32.Bit32, BF32.Bit31).Returns(false);
+
+            yield return new TestCaseData(BF64.Bit31, BF64.Bit31).Returns(true);
+            yield return new TestCaseData(BF64.Bit63 | BF64.Bit64, BF64.Bit63).Returns(true);
+            yield return new TestCaseData(BF64.Bit62 | BF64.Bit64, BF64.Bit63).Returns(false);
+
+            yield return new TestCaseData(UBF8.Bit3, UBF8.Bit3).Returns(true);
+            yield return new TestCaseData(UBF8.Bit7 | UBF8.Bit8, UBF8.Bit7).Returns(true);
+            yield return new TestCaseData(UBF8.Bit6 | UBF8.Bit8, UBF8.Bit7).Returns(false);
+
+            yield return new TestCaseData(UBF16.Bit7, UBF16.Bit7).Returns(true);
+            yield return new TestCaseData(UBF16.Bit15 | UBF16.Bit16, UBF16.Bit15).Returns(true);
+            yield return new TestCaseData(UBF16.Bit14 | UBF16.Bit16, UBF16.Bit15).Returns(false);
+
+            yield return new TestCaseData(UBF32.Bit15, UBF32.Bit15).Returns(true);
+            yield return new TestCaseData(UBF32.Bit31 | UBF32.Bit32, UBF32.Bit31).Returns(true);
+            yield return new TestCaseData(UBF32.Bit30 | UBF32.Bit32, UBF32.Bit31).Returns(false);
+
+            yield return new TestCaseData(UBF64.Bit31, UBF64.Bit31).Returns(true);
+            yield return new TestCaseData(UBF64.Bit63 | UBF64.Bit64, UBF64.Bit63).Returns(true);
+            yield return new TestCaseData(UBF64.Bit62 | UBF64.Bit64, UBF64.Bit63).Returns(false);
         }
     }
 }

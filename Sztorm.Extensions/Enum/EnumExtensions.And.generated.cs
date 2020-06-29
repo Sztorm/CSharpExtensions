@@ -15,8 +15,8 @@ namespace Sztorm.Extensions.Enum
         {
             ref SByte sourceAsInt8 = ref Unsafe.As<TEnum, SByte>(ref source);
             sourceAsInt8 = (SByte)Int64And(
-                Unsafe.As<TEnum, long>(ref source),
-                Unsafe.As<TEnum, long>(ref flags));
+                Unsafe.As<TEnum, SByte>(ref source),
+                Unsafe.As<TEnum, SByte>(ref flags));
         
             return source;
         }
@@ -26,8 +26,8 @@ namespace Sztorm.Extensions.Enum
         {
             ref Int16 sourceAsInt16 = ref Unsafe.As<TEnum, Int16>(ref source);
             sourceAsInt16 = (Int16)Int64And(
-                Unsafe.As<TEnum, long>(ref source),
-                Unsafe.As<TEnum, long>(ref flags));
+                Unsafe.As<TEnum, Int16>(ref source),
+                Unsafe.As<TEnum, Int16>(ref flags));
         
             return source;
         }
@@ -37,8 +37,8 @@ namespace Sztorm.Extensions.Enum
         {
             ref Int32 sourceAsInt32 = ref Unsafe.As<TEnum, Int32>(ref source);
             sourceAsInt32 = (Int32)Int64And(
-                Unsafe.As<TEnum, long>(ref source),
-                Unsafe.As<TEnum, long>(ref flags));
+                Unsafe.As<TEnum, Int32>(ref source),
+                Unsafe.As<TEnum, Int32>(ref flags));
         
             return source;
         }
@@ -48,8 +48,8 @@ namespace Sztorm.Extensions.Enum
         {
             ref Int64 sourceAsInt64 = ref Unsafe.As<TEnum, Int64>(ref source);
             sourceAsInt64 = (Int64)Int64And(
-                Unsafe.As<TEnum, long>(ref source),
-                Unsafe.As<TEnum, long>(ref flags));
+                Unsafe.As<TEnum, Int64>(ref source),
+                Unsafe.As<TEnum, Int64>(ref flags));
         
             return source;
         }
