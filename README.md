@@ -1,5 +1,5 @@
 # CSharpExtensions
-A set of c# extensions designed for performance and usability.
+Set of C# extensions designed for performance and usability.
  * [API Documentation](./Documentation/API/index.md)
  * [License](./LICENSE)
 
