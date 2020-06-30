@@ -1,3 +1,4 @@
+#### [Sztorm.Extensions](./index.md 'index')
 ### [Sztorm.Extensions.Enum](./Sztorm-Extensions-Enum.md 'Sztorm.Extensions.Enum').[EnumExtensions](./Sztorm-Extensions-Enum-EnumExtensions.md 'Sztorm.Extensions.Enum.EnumExtensions')
 ## EnumExtensions.WithFlagsSetTo&lt;TEnum&gt;(TEnum, TEnum, bool) Method
 Returns [source](#Sztorm-Extensions-Enum-EnumExtensions-WithFlagsSetTo-TEnum-(TEnum_TEnum_bool)-source 'Sztorm.Extensions.Enum.EnumExtensions.WithFlagsSetTo&lt;TEnum&gt;(TEnum, TEnum, bool).source') enum with specified [flags](#Sztorm-Extensions-Enum-EnumExtensions-WithFlagsSetTo-TEnum-(TEnum_TEnum_bool)-flags 'Sztorm.Extensions.Enum.EnumExtensions.WithFlagsSetTo&lt;TEnum&gt;(TEnum, TEnum, bool).flags') set  

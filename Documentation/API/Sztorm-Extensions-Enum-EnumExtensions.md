@@ -1,3 +1,4 @@
+#### [Sztorm.Extensions](./index.md 'index')
 ### [Sztorm.Extensions.Enum](./Sztorm-Extensions-Enum.md 'Sztorm.Extensions.Enum')
 ## EnumExtensions Class
 ```csharp

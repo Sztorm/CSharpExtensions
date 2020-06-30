@@ -1,3 +1,4 @@
+#### [Sztorm.Extensions](./index.md 'index')
 ### [Sztorm.Extensions.Enum](./Sztorm-Extensions-Enum.md 'Sztorm.Extensions.Enum').[EnumExtensions](./Sztorm-Extensions-Enum-EnumExtensions.md 'Sztorm.Extensions.Enum.EnumExtensions')
 ## EnumExtensions.WithoutFlags&lt;TEnum&gt;(TEnum, TEnum) Method
 Returns [source](#Sztorm-Extensions-Enum-EnumExtensions-WithoutFlags-TEnum-(TEnum_TEnum)-source 'Sztorm.Extensions.Enum.EnumExtensions.WithoutFlags&lt;TEnum&gt;(TEnum, TEnum).source') enum without specified [flags](#Sztorm-Extensions-Enum-EnumExtensions-WithoutFlags-TEnum-(TEnum_TEnum)-flags 'Sztorm.Extensions.Enum.EnumExtensions.WithoutFlags&lt;TEnum&gt;(TEnum, TEnum).flags').  

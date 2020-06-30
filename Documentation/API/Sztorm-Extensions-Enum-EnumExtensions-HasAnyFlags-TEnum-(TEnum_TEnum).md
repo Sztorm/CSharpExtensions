@@ -1,3 +1,4 @@
+#### [Sztorm.Extensions](./index.md 'index')
 ### [Sztorm.Extensions.Enum](./Sztorm-Extensions-Enum.md 'Sztorm.Extensions.Enum').[EnumExtensions](./Sztorm-Extensions-Enum-EnumExtensions.md 'Sztorm.Extensions.Enum.EnumExtensions')
 ## EnumExtensions.HasAnyFlags&lt;TEnum&gt;(TEnum, TEnum) Method
 Returns value indicating whether any of the [flags](#Sztorm-Extensions-Enum-EnumExtensions-HasAnyFlags-TEnum-(TEnum_TEnum)-flags 'Sztorm.Extensions.Enum.EnumExtensions.HasAnyFlags&lt;TEnum&gt;(TEnum, TEnum).flags') is set in the  
