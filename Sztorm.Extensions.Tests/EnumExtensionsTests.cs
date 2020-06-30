@@ -15,10 +15,10 @@ namespace Sztorm.Extensions.Tests
 
     public static partial class EnumExtensionsTests
     {
-        [TestCaseSource(typeof(EnumExtensionsTests), nameof(AddTestCases))]
-        public static TEnum TestAdd<TEnum>(TEnum left, TEnum right)
+        [TestCaseSource(typeof(EnumExtensionsTests), nameof(WithFlagsTestCases))]
+        public static TEnum TestWithFlags<TEnum>(TEnum source, TEnum flags)
             where TEnum : unmanaged, System.Enum
-            => left.And(right);
+            => source.WithFlags(flags);
 
         [TestCaseSource(typeof(EnumExtensionsTests), nameof(WithFlagsSetToTestCases))]
         public static TEnum TestWithFlagsSetTo<TEnum>(TEnum source, TEnum flags, bool value)
@@ -40,7 +40,7 @@ namespace Sztorm.Extensions.Tests
             where TEnum : unmanaged, System.Enum
             => source.HasAnyFlags(flags);
 
-        private static IEnumerable<TestCaseData> AddTestCases()
+        private static IEnumerable<TestCaseData> WithFlagsTestCases()
         {
             yield return new TestCaseData(BF8.Bit7, BF8.Bit8).Returns(BF8.Bit7 | BF8.Bit8);
             yield return new TestCaseData(BF16.Bit1, BF16.None).Returns(BF16.Bit1);

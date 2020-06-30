@@ -6,10 +6,11 @@ namespace Sztorm.Extensions.Enum
     public static partial class EnumExtensions
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static long Int64And(long source, long flags) => source | flags;
+        private static long Int64WithFlags(long source, long flags) => source | flags;
 
         /// <summary>
-        ///     Returns aggregation of two flags.<br/>
+        ///     Returns <paramref name="source"/> enum with specified <paramref name="flags"/>.
+        ///     <br/>
         ///     Supported enum sizes are 1, 2, 4 and 8-byte.
         ///     <para>
         ///         Exceptions:<br/>
@@ -21,7 +22,7 @@ namespace Sztorm.Extensions.Enum
         /// <param name="flags"></param>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static TEnum And<TEnum>(this TEnum source, TEnum flags)
+        public static TEnum WithFlags<TEnum>(this TEnum source, TEnum flags)
             where TEnum : unmanaged, System.Enum
         {
             int enumSize = Unsafe.SizeOf<TEnum>();
@@ -29,13 +30,13 @@ namespace Sztorm.Extensions.Enum
             switch (enumSize)
             {
                 case 1:
-                    return source.Int8And(flags);
+                    return source.Int8WithFlags(flags);
                 case 2:
-                    return source.Int16And(flags);
+                    return source.Int16WithFlags(flags);
                 case 4:
-                    return source.Int32And(flags);
+                    return source.Int32WithFlags(flags);
                 case 8:
-                    return source.Int64And(flags);
+                    return source.Int64WithFlags(flags);
                 default:
                     throw new ArgumentException("Size of underlying enum type is not supported.");
             }

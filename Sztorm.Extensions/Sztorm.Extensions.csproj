@@ -22,9 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Enum\EnumExtensions.And.tt">
+    <None Update="Enum\EnumExtensions.WithFlags.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumExtensions.And.generated.cs</LastGenOutput>
+      <LastGenOutput>EnumExtensions.WithFlags.generated.cs</LastGenOutput>
     </None>
     <None Update="Enum\EnumExtensions.HasAllFlags.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -49,10 +49,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Enum\EnumExtensions.And.generated.cs">
+    <Compile Update="Enum\EnumExtensions.WithFlags.generated.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>EnumExtensions.And.tt</DependentUpon>
+      <DependentUpon>EnumExtensions.WithFlags.tt</DependentUpon>
     </Compile>
     <Compile Update="Enum\EnumExtensions.HasAllFlags.generated.cs">
       <DesignTime>True</DesignTime>

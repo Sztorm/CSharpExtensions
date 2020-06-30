@@ -33,11 +33,11 @@ namespace Sztorm.Extensions.Enum
     private void WriteMethod(int size, Type type)
     {
 #>
-    private static TEnum Int<#= size #>And<TEnum>(this TEnum source, TEnum flags)
+    private static TEnum Int<#= size #>WithFlags<TEnum>(this TEnum source, TEnum flags)
         where TEnum : unmanaged, System.Enum
     {
         ref <#= type.Name #> sourceAsInt<#= size #> = ref Unsafe.As<TEnum, <#= type.Name #>>(ref source);
-        sourceAsInt<#= size #> = (<#= type.Name #>)Int64And(
+        sourceAsInt<#= size #> = (<#= type.Name #>)Int64WithFlags(
             Unsafe.As<TEnum, <#= type.Name #>>(ref source),
             Unsafe.As<TEnum, <#= type.Name #>>(ref flags));
     
