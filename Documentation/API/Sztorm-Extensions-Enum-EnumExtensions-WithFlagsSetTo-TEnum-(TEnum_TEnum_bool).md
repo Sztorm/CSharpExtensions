@@ -7,7 +7,7 @@ Supported enum sizes are 1, 2, 4 and 8-byte.
 
 
 
-    Exceptions:<br />[System.ArgumentException](https://docs.microsoft.com/en-us/dotnet/api/System.ArgumentException 'System.ArgumentException') Size of underlying enum type is not supported.  
+    Exceptions:<br />[System.ArgumentException](https://docs.microsoft.com/en-us/dotnet/api/System.ArgumentException 'System.ArgumentException'): Size of underlying enum type is not supported.  
 ```csharp
 public static TEnum WithFlagsSetTo<TEnum>(this TEnum source, TEnum flags, bool value);
 ```

@@ -14,7 +14,7 @@ namespace Sztorm.Extensions.Enum
         ///     Supported enum sizes are 1, 2, 4 and 8-byte.
         ///     <para>
         ///         Exceptions:<br/>
-        ///         <see cref="ArgumentException"/> Size of underlying enum type is not supported.
+        ///         <see cref="ArgumentException"/>: Size of underlying enum type is not supported.
         ///     </para>
         /// </summary>
         /// <typeparam name="TEnum"></typeparam>
@@ -51,7 +51,7 @@ namespace Sztorm.Extensions.Enum
         ///     Supported enum sizes are 1, 2, 4 and 8-byte.
         ///     <para>
         ///         Exceptions:<br/>
-        ///         <see cref="ArgumentException"/> Size of underlying enum type is not supported.
+        ///         <see cref="ArgumentException"/>: Size of underlying enum type is not supported.
         ///     </para>
         /// </summary>
         /// <typeparam name="TEnum"></typeparam>
@@ -94,7 +94,7 @@ namespace Sztorm.Extensions.Enum
         ///     Supported enum sizes are 1, 2, 4 and 8-byte.
         ///     <para>
         ///         Exceptions:<br/>
-        ///         <see cref="ArgumentException"/> Size of underlying enum type is not supported.
+        ///         <see cref="ArgumentException"/>: Size of underlying enum type is not supported.
         ///     </para>
         /// </summary>
         /// <typeparam name="TEnum"></typeparam>
@@ -132,7 +132,7 @@ namespace Sztorm.Extensions.Enum
         ///     Supported enum sizes are 1, 2, 4 and 8-byte.
         ///     <para>
         ///         Exceptions:<br/>
-        ///         <see cref="ArgumentException"/> Size of underlying enum type is not supported.
+        ///         <see cref="ArgumentException"/>: Size of underlying enum type is not supported.
         ///     </para>
         /// </summary>
         /// <typeparam name="TEnum"></typeparam>
@@ -170,7 +170,7 @@ namespace Sztorm.Extensions.Enum
         ///     Supported enum sizes are 1, 2, 4 and 8-byte.
         ///     <para>
         ///         Exceptions:<br/>
-        ///         <see cref="ArgumentException"/> Size of underlying enum type is not supported.
+        ///         <see cref="ArgumentException"/>: Size of underlying enum type is not supported.
         ///     </para>
         /// </summary>
         /// <typeparam name="TEnum"></typeparam>
@@ -208,7 +208,7 @@ namespace Sztorm.Extensions.Enum
         ///     Supported enum sizes are 1, 2, 4 and 8-byte.
         ///     <para>
         ///         Exceptions:<br/>
-        ///         <see cref="ArgumentException"/> Size of underlying enum type is not supported.
+        ///         <see cref="ArgumentException"/>: Size of underlying enum type is not supported.
         ///     </para>
         /// </summary>
         /// <typeparam name="TEnum"></typeparam>
