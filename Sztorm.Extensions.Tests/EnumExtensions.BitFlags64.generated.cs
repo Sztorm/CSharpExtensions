@@ -9,6 +9,7 @@ namespace Sztorm.Extensions.Tests
 {
     public static partial class EnumExtensionsTests
     {
+        [Flags]
         public enum BitFlags64 : Int64
         {
             None = 0,
