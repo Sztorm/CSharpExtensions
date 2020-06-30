@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sztorm.Extensions", "Sztorm.Extensions.csproj", "{54C324D1-F05A-4600-BF87-FEE7E66C1FDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sztorm.Extensions", "Sztorm.Extensions\Sztorm.Extensions.csproj", "{54C324D1-F05A-4600-BF87-FEE7E66C1FDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sztorm.Extensions.Tests", "..\Sztorm.Extensions.Tests\Sztorm.Extensions.Tests.csproj", "{6A00CEF8-DA45-4704-B17F-FCC40F1CA589}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sztorm.Extensions.Tests", "Sztorm.Extensions.Tests\Sztorm.Extensions.Tests.csproj", "{6A00CEF8-DA45-4704-B17F-FCC40F1CA589}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

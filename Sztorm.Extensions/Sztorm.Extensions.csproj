@@ -1,7 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <SignAssembly>false</SignAssembly>
+    <Authors>Sztorm</Authors>
+    <Version>0.1.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath></OutputPath>
+    <DocumentationFile>.\bin\Release\netstandard2.0\Sztorm.Extensions.xml</DocumentationFile>
+    <DefaultDocumentationFolder>..\Documentation\API</DefaultDocumentationFolder>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,6 +37,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="DefaultDocumentation" Version="0.6.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <GeneratePathProperty>false</GeneratePathProperty>
+    </PackageReference>
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.7.1" />
   </ItemGroup>
 
